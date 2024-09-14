@@ -1,6 +1,7 @@
 package nl.tudelft.jpacman.board;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,9 @@ class OccupantTest {
     @Test
     void noStartSquare() {
         // Remove the following placeholder:
-        assertThat(unit).isNotNull();
+        assertThat(unit.hasSquare()).isFalse();
+
+
     }
 
     /**
@@ -41,8 +44,13 @@ class OccupantTest {
      */
     @Test
     void testOccupy() {
-        // Remove the following placeholder:
-        assertThat(unit).isNotNull();
+        // Add square for unit
+        Square sq1 = new BasicSquare();
+        //Given unit occupy sq1 location
+        unit.occupy(sq1);
+
+        assertThat(unit.getSquare()).isEqualTo(sq1);
+        assertThat(sq1.getOccupants()).contains(unit);
     }
 
     /**
@@ -51,7 +59,14 @@ class OccupantTest {
      */
     @Test
     void testReoccupy() {
-        // Remove the following placeholder:
-        assertThat(unit).isNotNull();
+        //Add square for unit
+        Square sq1 = new BasicSquare();
+        unit.occupy(sq1);       //Given unit occupy sq1 location
+        Square sq2 = new BasicSquare();
+        unit.occupy(sq2);       //Given unit occupy sq2 location
+
+        assertThat(unit.getSquare()).isEqualTo(sq2);
+        assertThat(sq1.getOccupants()).doesNotContain(unit);
+        assertThat(sq2.getOccupants()).contains(unit);
     }
 }
