@@ -50,7 +50,7 @@ class OccupantTest {
         unit.occupy(sq1);
 
         assertThat(unit.getSquare()).isEqualTo(sq1);
-        assertThat(sq1.getOccupants()).contains(unit);
+        assertThat(sq1.getOccupants()).contains(unit); //check if sq1 exist in that space
     }
 
     /**
@@ -66,7 +66,7 @@ class OccupantTest {
         unit.occupy(sq2);       //Given unit occupy sq2 location
 
         assertThat(unit.getSquare()).isEqualTo(sq2);
-        assertThat(sq1.getOccupants()).doesNotContain(unit);
-        assertThat(sq2.getOccupants()).contains(unit);
+        assertThat(sq1.getOccupants()).doesNotContain(unit); //check if sq1 not exist in that space
+        assertThat(sq2.getOccupants()).contains(unit); //check if sq2 exist in that space
     }
 }
