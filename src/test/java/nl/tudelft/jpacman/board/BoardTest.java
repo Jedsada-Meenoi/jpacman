@@ -9,10 +9,16 @@ import org.junit.jupiter.api.Test;
 public class BoardTest {
     private Square boardSquare;
     private Square[][] board1 = new Square[1][1];   // setting board 1x1
+    /**
+     * Board set up functionality.
+     */
     @BeforeEach
     void setUp() {
         boardSquare = new BasicSquare();
     } // set square inside board space
+    /**
+     * Test for the Board functionality.
+     */
     @Test
         public void validateBoard() {
         // method implementation
@@ -21,6 +27,9 @@ public class BoardTest {
         assertThat(testBoard.squareAt(0, 0)).isSameAs(boardSquare); //Validate board
 
     }
+    /**
+     * Test for the Board functionality.
+     */
     @Test
         public void testSquareAt() {
         // method implementation
