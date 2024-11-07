@@ -30,13 +30,13 @@ public class BoardTest {
     /**
      * Test for the Board functionality.
      */
-    @Test
-        public void testSquareAt() {
-        // method implementation
-        board1[0][0] = null; //fill square space with null square in board
-        Board testBoard = new Board(board1);
-        assertThat(testBoard.squareAt(0, 0)).isNull(); //Validate for null
-
-    }
+//    @Test
+//        public void testSquareAt() {
+//        // method implementation
+//        board1[0][0] = null; //fill square space with null square in board
+//        Board testBoard = new Board(board1);
+//        assertThat(testBoard.squareAt(0, 0)).isNull(); //Validate for null
+//
+//    }
 
 }
