@@ -1,7 +1,6 @@
 package nl.tudelft.jpacman.level;
 import nl.tudelft.jpacman.PacmanConfigurationException;
 import nl.tudelft.jpacman.board.BoardFactory;
-import nl.tudelft.jpacman.board.Square;
 import nl.tudelft.jpacman.npc.ghost.Blinky;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
