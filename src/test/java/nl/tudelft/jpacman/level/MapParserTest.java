@@ -25,6 +25,11 @@ public class MapParserTest {
     private LevelFactory levelFactory;
     @Mock
     private Blinky blinky;
+
+    // Constants to replace magic numbers
+    private static final int NUM_GROUND_TILES = 10;
+    private static final int NUM_WALL_TILES = 26;
+
     /**
      * Test for the parseMap method (good map).
      */
@@ -41,8 +46,8 @@ public class MapParserTest {
         map.add("############");
         mapParser.parseMap(map);
         Mockito.verify(levelFactory, Mockito.times(1)).createGhost();
-        Mockito.verify(boardFactory, Mockito.times(10)).createGround();
-        Mockito.verify(boardFactory, Mockito.times(26)).createWall();
+        Mockito.verify(boardFactory, Mockito.times(NUM_GROUND_TILES)).createGround();
+        Mockito.verify(boardFactory, Mockito.times(NUM_WALL_TILES)).createWall();
 
     }
     /**
